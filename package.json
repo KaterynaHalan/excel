@@ -42,5 +42,9 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "normalize.css": "^8.0.1"
   }
 }
