@@ -1,4 +1,4 @@
-import {storage} from '@core/utils';
+import {clone, storage} from '@core/utils';
 import {defaultStyles, defaultTitle} from '@/constants';
 
 const defaultState = {
@@ -8,7 +8,10 @@ const defaultState = {
   dataStyles: {},
   currentText: '',
   title: defaultTitle,
-  currentStyles: defaultStyles
+  currentStyles: defaultStyles,
+  openedDate: new Date().toJSON()
 };
 
-export const initialState = storage('store') ? storage('store') : defaultState;
+export function getInitialState(key) {
+  return storage(key) ? storage(key) : clone(defaultState);
+}
